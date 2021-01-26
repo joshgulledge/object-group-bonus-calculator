@@ -46,13 +46,44 @@ function calculateBonus (employee) {
 
   const newObj = {
     name: employee.name, 
-    bonusPercentage: , 
-    totalCompensation: , 
-    totalBonus: , 
+    bonusPercentage: 0, 
+    totalCompensation: 0, 
+    totalBonus: 0, 
   };
 
-  if ()
+  if (employee.reviewRating <= 2) {
+    // no bonus
+    newObj.totalBonus = 0;
+  };
+  if (employee.reviewRating === 3) {
+    // bonus 4% base annual income
+    newObj.totalBonus = employee.annualSalary * .04;
+  };
+  if (employee.reviewRating === 4) {
+    // bonus 6% base annual income
+    newObj.totalBonus = employee.annualSalary * .06;
+  }
+  if (employee.reviewRating === 5) {
+    // bonus 10% base annual income
+    newObj.totalBonus = employee.annualSalary * .1;
+  }
+
+  // check for more than 4 numbers
+  if (employee.employeeNumber.length <= 4) {
+    console.log(employee.employeeNumber)
+    console.log(newObj.totalBonus)
+    newObj.totalBonus *= .05;
+    console.log(newObj.totalBonus)
+
+  };
+
+  // 
 
   return newObj;
 
 }
+
+for (let i = 0; i < employees.length; i++) {
+  console.log(calculateBonus(employees[i]));
+};
+

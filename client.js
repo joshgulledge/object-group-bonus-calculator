@@ -92,6 +92,15 @@ function calculateBonus(employee) {
 
 //
 
-for (let i = 0; i < employees.length; i++) {
-  console.log(calculateBonus(employees[i]));
-}
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', function () {
+  for (let i = 0; i < employees.length; i++) {
+    const useThis = calculateBonus(employees[i]);
+    document
+      .querySelector('.the-list')
+      .insertAdjacentHTML(
+        'beforeend',
+        `<li> Name: ${useThis.name}, Bonus Percent: ${useThis.bonusPercentage}, Total Income will be: $${useThis.totalCompensation} </li>`
+      );
+  }
+});

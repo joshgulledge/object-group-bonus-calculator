@@ -1,0 +1,15 @@
+body {
+  background-color: #a6f0c6;
+  text-align: center;
+}
+
+.the-list {
+  text-align: left;
+  border: solid 4px #4e3d53;
+  border-radius: 10px;
+  background-color: #a98b98;
+}
+
+.hidden {
+  visibility: hidden;
+}

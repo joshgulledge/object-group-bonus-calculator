@@ -94,13 +94,14 @@ function calculateBonus(employee) {
 
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', function () {
+  const unorderedList = document.querySelector('.the-list');
   for (let i = 0; i < employees.length; i++) {
     const useThis = calculateBonus(employees[i]);
-    document
-      .querySelector('.the-list')
-      .insertAdjacentHTML(
-        'beforeend',
-        `<li> Name: ${useThis.name}, Bonus Percent: ${useThis.bonusPercentage}, Total Income will be: $${useThis.totalCompensation} </li>`
-      );
+    console.log(unorderedList);
+    unorderedList.insertAdjacentHTML(
+      'beforeend',
+      `<li> Name: ${useThis.name}, Bonus Percent: ${useThis.bonusPercentage}, Total Income will be: $${useThis.totalCompensation} </li>`
+    );
   }
+  unorderedList.remove('.hidden');
 });
